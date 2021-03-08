@@ -1,0 +1,201 @@
+* {
+    list-style: none;
+    text-decoration: none;
+}
+h2,
+p {
+    margin: 0;
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+header {
+    box-shadow: 0 2px 6px rgb(100 100 100 / 15%);
+}
+nav {
+    text-align: center;
+}
+nav ul {
+    display: inline-block;
+}
+nav ul li {
+    font-size: 18px;
+    border-bottom: 2px solid transparent;
+    margin: 0 20px;
+    transition: all ease-in-out 0.2s;
+}
+nav ul li:hover{
+    border-color: rgb(51, 122, 183);
+    border-width: 2.3px;
+}
+li a {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+section:nth-of-type(2) {
+    display: flex;
+    flex-wrap: wrap;
+}
+#mycity {
+    flex: 2;
+    display: flex;
+    color: #fff;
+}
+#mycityLeft {
+    flex: 1;
+    position: relative;
+    height: 290px;
+    background-color: rgba(62, 127, 224, 0.979);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding: 16px 24px;
+}
+#mycityLeft div {
+    position: absolute;
+    bottom: 15px;
+}
+#mycityLeft div img{
+    width: 80%;
+}
+#mycityLeft div #wendu {
+    font-size: 56px;
+}
+#mycityRight {
+    flex: 2;
+    height: 290px;
+    background-color: rgb(27, 29, 48);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 16px 24px;
+}
+#mycityRight > div:nth-of-type(1) {
+    background-color: rgb(32, 35, 58);   
+}
+#mycityRight div:nth-of-type(1) li {
+    position: relative;
+    line-height: 25px;
+    font-size: 14px;
+    border: 1px solid rgb(27, 29, 48);
+    padding: 0 8px;
+}
+
+#mycityRight > div li span {
+    position: absolute;
+    right: 8px;
+}
+
+#mycityRight div:nth-of-type(2) {
+    margin-top: 24px;
+}
+#mycityRight div:nth-of-type(2) ul{
+    display: flex;
+    justify-content: center;
+}
+#mycityRight div:nth-of-type(2) li{
+    flex: 1;
+    text-align: center;
+}
+#mycityRight div:nth-of-type(2) img{
+    width: 64%;
+}
+#mycityRight div:nth-of-type(3) {
+    text-align: center;
+    padding-top: 25px;
+}
+#mycityRight #button {
+    color: white;
+    padding: 8px 96px;
+    background-color: rgba(62, 127, 224, 0.979);
+    cursor: pointer;
+    border-radius: 20px;
+    transition: padding 0.3s;
+}
+
+#mycityRight #button:hover {
+    padding: 8px 80px;   
+}
+#lifeIndex {
+    flex: 2.7;
+    color: #6e6d6d;
+    font-size: larger;
+}
+#lifeIndex ul{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-content: space-around;
+}
+#lifeIndex ul li {
+    height: 112px;
+    float: left;
+    border-radius: 10px;
+    box-shadow: 0 0 14px 0 rgba(0,0,0,.08);  
+    background-color:  #ffffff;
+    overflow: hidden;
+}
+#lifeIndex ul li div {
+    width: 140px;
+    height: 112px;
+    padding: 16px;
+    overflow: hidden;
+}
+#lifeIndex ul li div p {
+    margin-top: 10px;
+}
+#lifeIndex .summary {
+    text-align: center;  
+    transition: margin-top 0.3s;
+}
+#lifeIndex ul li:hover .summary {
+    margin-top: -112px;
+}
+@media screen and (max-width:1200px) and (min-width:993px) {
+    #mycityRight #button {       
+        padding: 5px 65px;
+    }
+    #mycityRight #button:hover {
+        padding: 5px 40px;   
+    }
+}
+@media screen and (max-width:992px) and (min-width:767px) {
+    #mycityRight #button {       
+        padding: 5px 40px;
+    }
+    #mycityRight #button:hover {
+        padding: 5px 30px;   
+    }
+}
+@media screen and (max-width:768px) and (min-width:456px) {
+    section:nth-of-type(2) {
+        flex-direction: column;
+    }
+    #mycity {
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width:456px) {
+    section:nth-of-type(2) {
+        flex-direction: column;
+    }
+    #mycity {
+        margin-bottom: 20px;
+    }
+    #mycityRight #button {       
+        padding: 5px 50px;
+    }
+    #mycityRight #button:hover {
+        padding: 5px 40px;   
+    }
+}
+footer {
+    margin-top: 50px;
+    background-color: rgba(31, 28, 28, 0.774);
+    color: white;
+    font-size: small;
+    height: 50px;
+    box-shadow: 0 0 5px 2px rgba(158,179,193,.5);
+    text-align: center;
+    line-height: 50px;
+}
