@@ -35,13 +35,13 @@
     <section class="container">
         <div id="mycity">
             <div id="mycityLeft">
-                <h2> {{ weak }} </h2>
-                <p id="date">0000-00-00</p>
-                <p id="local"><span>福州</span></p>
+                <h2>{{ week }}</h2>
+                <p id="date">{{ date }}</p>
+                <p id="local"><span>{{ city }}</span></p>
                 <div style="background-color: transparent;">
                     <img src="./img/qing.png" alt="">
-                    <p id="wendu"> {{ tem }} ℃</p>
-                    <p id="air">空气质量：<span>优</span></p>
+                    <p id="wendu">{{ tem }}</p>
+                    <p id="air">空气质量：<span>{{ airLevel }}</span></p>
                 </div>
             </div>
             <div id="mycityRight">
@@ -169,6 +169,5 @@
         </div>
     </section>
     <footer>Copyright©221701424_赵梓峻 All Rights Reserved (2020-2021)</footer>
-    <script src="./js/axios.min.js"></script>
     <script src="./js/require.js" data-main="./js/main"></script>
 </html>
