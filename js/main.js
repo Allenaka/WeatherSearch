@@ -8,14 +8,14 @@ require.config({
         echarts: './echarts.min',
         china: './china',
         Data: './Data',
-        ip: 'http://ip.ws.126.net/ipquery?ie=utf-8'
+        mycity: './mycity',
+        lifeIndex: './lifeIndex'
     },
     shim : {
         bootstrap: ['jquery']
     }
 });
-require(['vue','mycity', 'map', 'Data', 'axios', 'jquery', 'bootstrap'], function(Vue, mycity, loadMap, Data) {
+require(['vue','mycity', 'lifeIndex', 'map', 'Data', 'axios', 'jquery', 'bootstrap'], function(Vue, mycity, life, loadMap, Data) {
     //加载地图
-    loadMap();
-    
+    loadMap();   
 });

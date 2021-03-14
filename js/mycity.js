@@ -1,18 +1,29 @@
 define([
     'vue',
     'Data',
-    'axios'
-], function(Vue, WeatherData, axios) {
+    'Utile'
+], function(Vue, WeatherData, Utile) {
     var mycity = new Vue({
         el: '#mycity',
         data: {
             //从缓存获取定位城市
             city: localStorage.getItem("ipcity"),
-            weaList: [],
             week: "--",
             tem: "--",
             date: "--",
-            airLevel : "--"
+            airLevel: "--",
+            wea: "--",
+            weaImgSrc: "./img/qing.png",
+            weaList: [],
+            weaImgsList: [],
+            weekList: [],
+            temList: [],
+            indexList: {
+                气压: '--',
+                湿度: '--',
+                风力: '--',
+                紫外线: '--'
+            }
         },
         methods: {
             /**
@@ -20,11 +31,22 @@ define([
              * @param {Array} data 
              */
             setData: function (data){
-                this.weaList = data;
                 this.week = data[0].week.replace("星期", "周");
                 this.tem = data[0].tem;  
                 this.date = data[0].date;
                 this.airLevel = data[0].air_level;
+                this.wea = data[0].wea;
+                this.weaImgSrc = Utile.getWeatherImage(data[0].wea_img);
+                this.indexList['气压'] = data[0].pressure + 'Pa';
+                this.indexList['湿度'] = data[0].humidity;
+                this.indexList['风力'] = data[0].win_speed;
+                this.indexList['紫外线'] = data[0].index[0].level;
+                for (var i = 0; i < 4; i++) {
+                    this.weaImgsList.push(Utile.getWeatherImage(data[i].wea_img));
+                    this.weaList.push(data[i].wea);
+                    this.weekList.push(data[i].week);
+                    this.temList.push(data[i].tem1);
+                }
             },
             /**
              * 获取天气数据
