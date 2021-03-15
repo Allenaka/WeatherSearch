@@ -1,8 +1,9 @@
 define([
     'Data',
     'echarts',
+    'rank',
     'china'
-], function(WeatherData, echarts) {
+], function(WeatherData, echarts, loadRank) {
     var province = ['北京','天津','上海','重庆','河北','河南','云南', '辽宁','黑龙江', '湖南', 
                         '安徽', '山东', '新疆', '江苏', '浙江', '江西', '湖北', '广西', '甘肃', 
                         '山西', '内蒙古', '陕西', '吉林', '福建', '贵州', '广东', '青海', '西藏',
@@ -75,6 +76,7 @@ define([
             if (n === 34) {
                 //加载地图
                 loadMap();
+                loadRank();
             }
         };
         for (var i = 0; i < shenghui.length; i++) {
@@ -90,7 +92,6 @@ define([
                     
                     return function() {
                         var cityData = new WeatherData(shenghui[i]); 
-                        console.log(cityData)
                         cityData.getData(function() {
                             var data = cityData.data;
                             wendu = {name: province[i], value: data[0].tem.match(/\d+/)[0]};

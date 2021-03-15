@@ -15,7 +15,11 @@ require.config({
         bootstrap: ['jquery']
     }
 });
-require(['vue','mycity', 'lifeIndex', 'map', 'Data', 'axios', 'jquery', 'bootstrap'], function(Vue, mycity, life, loadMap, Data) {
+require(['map', 'rank', 'rain', 'mycity', 'lifeIndex'], function(loadMap, loadRank, loadRain) {  
     //加载地图
     loadMap();   
+    //加载排行
+    loadRank();
+    //加载降水图
+    loadRain();
 });

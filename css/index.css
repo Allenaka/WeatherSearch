@@ -39,14 +39,14 @@ li a {
 }
 section:nth-of-type(1) {
     display: flex;
-    width: 90%;
     height: 640px;
     background-color: #fff;
     margin-bottom: 20px;
     padding: 20px 5px;
 }
 #map {
-    flex: 1.5;
+    flex: 1;
+    height: 600px;
 }
 #map + div {
     flex: 1;
@@ -56,8 +56,22 @@ section:nth-of-type(1) {
 #rank {
     flex: 2;
 }
-#rain {
+#chart {
     flex: 1;
+    text-align: center;
+}
+#chart p {
+    text-align: left;
+}
+#chart img {
+    position: relative;
+    top: -75px;
+    z-index: 99;
+    transform: scale(0.5, 0.5);
+    transition: all ease 1s;
+}
+#chart img:hover {
+    transform: scale(2, 2);
 }
 section:nth-of-type(2) {
     display: flex;
@@ -105,12 +119,10 @@ section:nth-of-type(2) {
     border: 1px solid rgb(27, 29, 48);
     padding: 0 8px;
 }
-
 #mycityRight > div li span {
     position: absolute;
     right: 8px;
 }
-
 #mycityRight div:nth-of-type(2) {
     margin-top: 24px;
 }
@@ -137,7 +149,6 @@ section:nth-of-type(2) {
     border-radius: 20px;
     transition: padding 0.3s;
 }
-
 #mycityRight #button:hover {
     padding: 8px 80px;   
 }
@@ -211,6 +222,17 @@ footer {
     }
 }
 @media screen and (max-width:768px) and (min-width:456px) {
+    section:nth-of-type(1) {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: 1080px;
+    }
+    #map {
+        flex: 1;
+    }
+    #map + div {
+        flex: 1.5;
+    }
     section:nth-of-type(2) {
         flex-direction: column;
     }
@@ -219,8 +241,19 @@ footer {
     }  
 }
 @media screen and (max-width:456px) {
+    section:nth-of-type(1) {
+        flex-direction: column;
+        height: 1080px;
+        flex-wrap: nowrap;
+    }
     section:nth-of-type(2) {
         flex-direction: column;
+    }
+    #map {
+        flex: 1;
+    }
+    #map + div{
+        flex: 1.5;
     }
     #mycity {
         margin-bottom: 20px;
