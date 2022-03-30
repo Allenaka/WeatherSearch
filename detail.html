@@ -14,7 +14,7 @@
 						<div>
 							<div class="now-wendu">14</div>
 							<!-- <div class="now-deg">&deg;</div> -->
-							<div class="now-c"><img src="qing.png" class="now-img">
+							<div class="now-c"><img src="./img/qing.png" class="now-img">
 								<div class="now-type">晴</div>
 							</div>
 						</div>
@@ -30,7 +30,7 @@
 						<li>
 							<div class="last-date">04-25</div>
 							<div>今天</div>
-							<div><img src="qing.png" width="38" height="38" class="last-img"></div>
+							<div><img src="./img/qing.png" width="38" height="38" class="last-img"></div>
 							<div class="last-type">晴</div>
 							<div>高温</div>
 							<div class="last-gaowen">18&deg;</div>
@@ -40,7 +40,7 @@
 						<li>
 							<div class="last-date">04-26</div>
 							<div>明天</div>
-							<div><img src="qing.png" width="38" height="38" class="last-img"></div>
+							<div><img src="./img/qing.png" width="38" height="38" class="last-img"></div>
 							<div class="last-type">晴</div>
 							<div>高温</div>
 							<div class="last-gaowen">18&deg;</div>
@@ -50,7 +50,7 @@
 						<li>
 							<div class="last-date">04-27</div>
 							<div>后天</div>
-							<div><img src="qing.png" width="38" height="38" class="last-img"></div>
+							<div><img src="./img/qing.png" width="38" height="38" class="last-img"></div>
 							<div class="last-type">晴</div>
 							<div>高温</div>
 							<div class="last-gaowen">18&deg;</div>
@@ -60,7 +60,7 @@
 						<li>
 							<div class="last-date">04-28</div>
 							<div class="last-zho">周二</div>
-							<div><img src="qing.png" width="38" height="38" class="last-img"></div>
+							<div><img src="./img/qing.png" width="38" height="38" class="last-img"></div>
 							<div class="last-type">晴</div>
 							<div>高温</div>
 							<div class="last-gaowen">18&deg;</div>
@@ -70,7 +70,7 @@
 						<li>
 							<div class="last-date">04-29</div>
 							<div class="last-zho">周三</div>
-							<div><img src="qing.png" width="38" height="38" class="last-img"></div>
+							<div><img src="./img/qing.png" width="38" height="38" class="last-img"></div>
 							<div class="last-type">晴</div>
 							<div>高温</div>
 							<div class="last-gaowen">18&deg;</div>
@@ -789,63 +789,63 @@
 					}
 				});
 			};
-			//判断天气算法
+			//判断天气
 			function gong(a, b, c) {
 				if (a === "晴") {
 					b.html('晴');
-					c.attr("src", "qing.png");
+					c.attr("src", "./img/qing.png");
 					return 1;
 				} else if (a === "多云") {
 					b.html('多云');
-					c.attr("src", "duoyun.png");
+					c.attr("src", "./img/duoyun.png");
 					return 2;
 				} else if (a === "阴") {
 					b.html('阴');
-					c.attr("src", "yins.png");
+					c.attr("src", "./img/yins.png");
 					return 3;
 				} else if (a === "小雨") {
 					b.html('小雨');
-					c.attr("src", "xiaoyu.png");
+					c.attr("src", "./img/xiaoyu.png");
 					return 4;
 				} else if (a === "中雨") {
 					b.html('中雨');
-					c.attr("src", "zhongyu.png");
+					c.attr("src", "./img/zhongyu.png");
 					return 4;
 				} else if (a === "大雨") {
 					b.html('大雨');
-					c.attr("src", "dayu.png");
+					c.attr("src", "./img/dayu.png");
 					return 4;
 				} else if (a === "阵雨") {
 					b.html('阵雨');
-					c.attr("src", "zhenyu.png");
+					c.attr("src", "./img/zhenyu.png");
 					return 4;
 				} else if (a === "小雪") {
 					b.html('小雪');
-					c.attr("src", "xiaoxue.png");
+					c.attr("src", "./img/xiaoxue.png");
 					return 5;
 				} else if (a === "中雪") {
 					b.html('中雪');
-					c.attr("src", "zhongxue.png");
+					c.attr("src", "./img/zhongxue.png");
 					return 5;
 				} else if (a === "大雪") {
 					b.html('大雪');
-					c.attr("src", "daxue.png");
+					c.attr("src", "./img/daxue.png");
 					return 5;
 				} else if (a === "阵雪") {
 					b.html('阵雪');
-					c.attr("src", "zhenxue.png");
+					c.attr("src", "./img/zhenxue.png");
 					return 5;
 				} else if (a.indexOf("雷") >= 0) {
 					b.html('雷雨');
-					c.attr("src", "leiyu.png");
+					c.attr("src", "./img/leiyu.png");
 					return 6;
 				} else if (a.indexOf("霾") >= 0) {
 					b.html('霾');
-					c.attr("src", "mai.png");
+					c.attr("src", "./img/mai.png");
 					return 7;
 				} else if (a.indexOf("雾") >= 0) {
 					b.html('雾');
-					c.attr("src", "wu.png");
+					c.attr("src", "./img/wu.png");
 					return 8;
 				}
 			}
