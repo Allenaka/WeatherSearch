@@ -71,11 +71,11 @@ define([
         var that = this;
         // this.city = city;
         //请求指定地区数据
-        var url = "https://www.tianqiapi.com/api?version=v1&appid=85593735&appsecret=ddofpk21&city=" + this.city;
+        var url = "https://yiketianqi.com/api?version=v1&appid=85593735&appsecret=ddofpk21&city=" + this.city;
         // var url = "https://v0.yiketianqi.com/api?version=v9&appid=85593735&appsecret=ddofpk21&city=" + this.city;
         //请求定位地区数据
         if (this.city === "") {
-            url = "https://www.tianqiapi.com/api?version=v1&appid=85593735&appsecret=ddofpk21";
+            url = "https://yiketianqi.com/api?version=v1&appid=85593735&appsecret=ddofpk21";
             // url = "https://v0.yiketianqi.com/api?version=v9&appid=85593735&appsecret=ddofpk21";
         }
         //发起异步请求
@@ -94,7 +94,7 @@ define([
     }
     WeatherData.prototype.getLifeIndex = function(callback) {
         var that = this;
-        var url = "https://www.tianqiapi.com/life/life?appid=85593735&appsecret=ddofpk21";
+        var url = "https://yiketianqi.com/life/life?appid=85593735&appsecret=ddofpk21";
         axios.get(url)
         .then(function(response) {
             //存储
