@@ -171,7 +171,7 @@
 			}
 			function y() {
 				$.ajax({
-					url: 'http://ip.ws.126.net/ipquery?ie=utf-8',
+					url: 'https://ip.ws.126.net/ipquery?ie=utf-8',
 					dataType: "script",
 					async: false,
 					success: function(data) {
@@ -181,7 +181,7 @@
 							var uu = lc;
 						}
 						$("#text").val("");
-						var url = encodeURI("http://wthrcdn.etouch.cn/weather_mini?city=" + uu);
+						var url = encodeURI("https://wthrcdn.etouch.cn/weather_mini?city=" + uu);
 						$.get({
 							url: url,
 							dataType: "json",
@@ -396,7 +396,7 @@
 			function y2(city) {
 				
 				$.ajax({
-					url: 'http://ip.ws.126.net/ipquery?ie=utf-8',
+					url: 'https://ip.ws.126.net/ipquery?ie=utf-8',
 					dataType: "script",
 					async: false,
 					success: function(data) {
