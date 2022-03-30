@@ -71,11 +71,11 @@ define([
         var that = this;
         // this.city = city;
         //请求指定地区数据
-        var url = "http://www.tianqiapi.com/api?version=v1&appid=85593735&appsecret=ddofpk21&city=" + this.city;
+        var url = "https://www.tianqiapi.com/api?version=v1&appid=85593735&appsecret=ddofpk21&city=" + this.city;
         // var url = "https://v0.yiketianqi.com/api?version=v9&appid=85593735&appsecret=ddofpk21&city=" + this.city;
         //请求定位地区数据
         if (this.city === "") {
-            url = "http://www.tianqiapi.com/api?version=v1&appid=85593735&appsecret=ddofpk21";
+            url = "https://www.tianqiapi.com/api?version=v1&appid=85593735&appsecret=ddofpk21";
             // url = "https://v0.yiketianqi.com/api?version=v9&appid=85593735&appsecret=ddofpk21";
         }
         //发起异步请求
