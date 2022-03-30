@@ -18,7 +18,7 @@ li {
 #box {
     width: 1920px;
     height: 550px;
-    background-image: url(bqing.png);
+    background-image: url(../img/bqing.png);
     background-size: 1920px 750px;
     padding-top: 1px;
 }
