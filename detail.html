@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>国内天气</title>
+		<link rel="stylesheet" href="1.css">
+	</head>
+	<body>
+		<div id="box">
+			<div class="now-city">北京<span onclick="tt()">[切换]</span><span class="r"><input type="text" id="text" /><button type="button" onclick="que()">确认</button></span></div>
+			<div>
+				<div>
+					<div>
+						<div>
+							<div class="now-wendu">14</div>
+							<!-- <div class="now-deg">&deg;</div> -->
+							<div class="now-c"><img src="qing.png" class="now-img">
+								<div class="now-type">晴</div>
+							</div>
+						</div>
+						<div class="now-date"> 2020-04-25 星期六 每天重心开始</div>
+						<div class="now-zhong"> 综合指数 <span class="now-span">优</span></div>
+						<div class="now-pan"> 今日晴天 适合户外运动哟~</div>
+						<div>云享天气提供</div>
+						<div class="now-uptime">更新于 10:49</div>
+					</div>
+				</div>
+				<div>
+					<ul>
+						<li>
+							<div class="last-date">04-25</div>
+							<div>今天</div>
+							<div><img src="qing.png" width="38" height="38" class="last-img"></div>
+							<div class="last-type">晴</div>
+							<div>高温</div>
+							<div class="last-gaowen">18&deg;</div>
+							<div>低温</div>
+							<div class="last-diwen">5&deg;</div>
+						</li>
+						<li>
+							<div class="last-date">04-26</div>
+							<div>明天</div>
+							<div><img src="qing.png" width="38" height="38" class="last-img"></div>
+							<div class="last-type">晴</div>
+							<div>高温</div>
+							<div class="last-gaowen">18&deg;</div>
+							<div>低温</div>
+							<div class="last-diwen">5&deg;</div>
+						</li>
+						<li>
+							<div class="last-date">04-27</div>
+							<div>后天</div>
+							<div><img src="qing.png" width="38" height="38" class="last-img"></div>
+							<div class="last-type">晴</div>
+							<div>高温</div>
+							<div class="last-gaowen">18&deg;</div>
+							<div>低温</div>
+							<div class="last-diwen">5&deg;</div>
+						</li>
+						<li>
+							<div class="last-date">04-28</div>
+							<div class="last-zho">周二</div>
+							<div><img src="qing.png" width="38" height="38" class="last-img"></div>
+							<div class="last-type">晴</div>
+							<div>高温</div>
+							<div class="last-gaowen">18&deg;</div>
+							<div>低温</div>
+							<div class="last-diwen">5&deg;</div>
+						</li>
+						<li>
+							<div class="last-date">04-29</div>
+							<div class="last-zho">周三</div>
+							<div><img src="qing.png" width="38" height="38" class="last-img"></div>
+							<div class="last-type">晴</div>
+							<div>高温</div>
+							<div class="last-gaowen">18&deg;</div>
+							<div>低温</div>
+							<div class="last-diwen">5&deg;</div>
+						</li>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="box2" style="width: 1103px; height: 400px; background-color: #f5f8fa; margin-top: 10px; padding: 30px 50px; border-bottom: #ffffff solid 2px;"></div>
+		<div id="box3" style=" width: 1103px; height: 1000px; background-color: #f5f8fa; margin: 2px auto;  padding: 30px 50px;">
+			<div id="now-info" style="float: left; width: 40%; height: 580px; border-right: #ffffff solid 2px;">
+				<div style="font-size: 18px; font-weight:700;">详细信息</div>
+				<ul id="info-list" style="margin-top: 30px; font-weight: 900; padding-right: 20px; padding-left: 0;"> 
+					<li>日 期：<span>/</span></li>
+					<li>天 气：<span>/</span></li>
+					<li>高 温：<span>/</span></li>
+					<li>低 温：<span>/</span></li>
+					<li>湿 度：<span>/</span></li>
+					<li>气 压：<span>/</span></li>
+					<li>风 向：<span>/</span></li>
+					<li>风 力：<span>/</span></li>
+					<li>日 出：<span>/</span></li>
+					<li>日 落：<span>/</span></li>
+					<li>紫外线强度：<span>/</span></li>
+					<li>预 警：<span>--</span></li>
+				</ul>
+			</div>
+			<div id="air-quality" style="float: left; width: 60%; height: 380px;"></div>
+			
+			<div id="air-pollutant" style="float: right; display: grid; position: relative; right: 100px; top: -150px; grid-template-columns: 200px 200px; grid-template-rows: 50px 100px 100px; border: solid 2px rgb(245, 244, 244); border-radius: 50px;">
+				<p style="grid-column-start: 1; grid-column-end: 3; font-weight: 900;">主要污染物</p>
+				<div>
+					<p>PM2.5</p>
+					<p>
+						<span>0</span>
+						<span>优</span>
+					</p>
+					<p><span></span></p>
+				</div>
+				<div>
+					<p>PM10</p>
+					<p>
+						<span>0</span>
+						<span>优</span>
+					</p>
+					<p><span></span></p>
+				</div>
+				<div>
+					<p>O3</p>
+					<p>
+						<span>0</span>
+						<span>优</span>
+					</p>
+					<p><span></span></p>
+				</div>
+				<div>
+					<p>NO2</p>
+					<p>
+						<span>0</span>
+						<span>优</span>
+					</p>
+					<p><span></span></p>
+				</div>
+			</div>
+
+			<div id="hours-data" style="float: left; width: 100%; height: 300px; border-top: 2px solid  #ffffff;"></div>
+		</div>
+		<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+		<script src="./echarts.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				y();
+				y2();
+				setInterval(function(){
+					y();
+					y2();
+				},3600000)
+			})
+			var q = 0;
+			function tt(){
+				if(q==0){
+					$(".r").show();
+					q=1;
+				}
+				else{
+					$(".r").hide();
+					q=0;
+				}
+			}
+			function que(){
+				var q = 0;
+				var city = $("#text").val();
+				y();
+				y2(city);
+			}
+			function y() {
+				$.ajax({
+					url: 'http://ip.ws.126.net/ipquery?ie=utf-8',
+					dataType: "script",
+					async: false,
+					success: function(data) {
+						if($("#text").val()!==""){
+							var uu = $("#text").val();
+						}else{
+							var uu = lc;
+						}
+						$("#text").val("");
+						var url = encodeURI("http://wthrcdn.etouch.cn/weather_mini?city=" + uu);
+						$.get({
+							url: url,
+							dataType: "json",
+							async: false,
+							success: function(data) {
+								
+								console.log(data);
+								if(data.status != 1000) {
+									alert("查询失败，未找到你要查询的地区的天气信息。");
+								}
+								var a = new Array(5);
+								for (var i = 0; i < 5; i++) {
+									a[i] = data.data.forecast[i];
+								}
+								for (var i = 0; i < 5; i++) {
+									$(".last-gaowen").eq(i).html(a[i].high.substring(2));
+								}
+								for (var i = 0; i < 5; i++) {
+									$(".last-diwen").eq(i).html(a[i].low.substring(2));
+								}
+								for (var i = 3; i < 5; i++) {
+									$(".last-zho").eq(i-3).html('周' + a[i].date.substring(a[i].date.length-1));
+								}
+								for (var i = 0; i < 5; i++) {
+									gong(a[i].type, $(".last-type").eq(i), $(".last-img").eq(i));
+								}
+								var time = new Date();
+								var m = new Array(5);
+								var day = new Array(5);
+								var hour;
+								var fen;
+								
+								if (time.getHours() < 10) {
+									hour = "0" + time.getHours();
+								} else {
+									hour = time.getHours();
+								}
+								if (time.getMinutes() < 10) {
+									fen = "0" + time.getMinutes();
+								} else {
+									fen = time.getMinutes();
+								}
+								for (var i = 0; i < 5; i++) {
+									day[i] = parseInt(a[i].date.substring(0, a[i].date.indexOf("日")));
+								}
+								m[0] = time.getMonth() + 1;
+								if (day[0] > day[1]) {
+									m[1] = m[2] = m[3] = m[4] = time.getMonth() + 2;
+									if (m[0] == 12) {
+										m[1] = m[2] = m[3] = m[4] = 1;
+									}
+								} else if (day[1] > day[2]) {
+									m[2] = m[3] = m[4] = time.getMonth() + 2;
+									m[1] = m[0];
+									if (m[1] == 12) {
+										m[2] = m[3] = m[4] = 1;
+									}
+								} else if (day[2] > day[3]) {
+									m[3] = m[4] = time.getMonth() + 2;
+									m[1] = m[2] = m[0];
+									if (m[2] == 12) {
+										m[3] = m[4] = 1;
+									}
+								} else if (day[3] > day[4]) {
+									m[4] = time.getMonth() + 2;
+									m[1] = m[2] = m[3] = m[0];
+									if (m[3] == 12) {
+										m[4] = 1;
+									}
+								} else {
+									m[1] = m[2] = m[3] = m[4] = m[0];
+								}
+								for (var i = 0; i < 5; i++) {
+									$(".last-date").eq(i).html(m[i] + '-' + day[i]);
+								} 
+								var now = new Array(4); 
+								now[0]=data.data.forecast[0].type;
+								now[1]=data.data.wendu;
+								now[2]=a[0].date.substring(a[0].date.indexOf("日") + 1);
+								now[3]=data.data.city;
+								$(".now-wendu").html(now[1]+"°");
+								$(".now-city").html(now[3]+"<span onclick='tt()'>[切换]</span><span class='r'><input type='text' id='text' /><button type='button' onclick='que()'>确认</button></span>");
+								var t = gong(a[0].type,$(".now-type"),$(".now-img"));
+								$(".now-date").html(" "+time.getFullYear()+"-"+m[0]+"-"+day[0]+" "+now[2]+" 每天重心开始");
+								if(t==1){
+									$(".now-span").html("优");
+									$(".now-span").css("background","#1fd71c");
+									$("#box").css("background-image","url(bqing.png)");
+								}else if(t==2){
+									$(".now-span").html("良");
+									$(".now-span").css("background","#fe8800");
+									$(".now-pan").html("今天多云哟 天气凉爽~");
+									$("#box").css("background-image","url(yin.png)");
+								}
+								else if(t==3){
+									$(".now-span").html("差");
+									$(".now-pan").html("今天阴天哟 出门记得保暖~");
+									$(".now-span").css("background","red");
+									$("#box").css("background-image","url(yin.png)");
+								}
+								else if(t==4){
+									$(".now-span").html("差");
+									$(".now-pan").html("今天是雨天哟 出门记得带伞~");
+									$(".now-span").css("background","red");
+									$("#box").css("background-image","url(yu.png)");
+								}
+								else if(t==5){
+									$(".now-span").html("差");
+									$(".now-pan").html("今天是雪天 出门注意防滑~");
+									$(".now-span").css("background","red");
+									$("#box").css("background-image","url(yu.png)");
+								}
+								else if(t==6){
+									$(".now-span").html("差");
+									$(".now-pan").html("今天会打雷 出门要谨慎~");
+									$(".now-span").css("background","red");
+								}
+								else if(t==7){
+									$(".now-span").html("差");
+									$(".now-pan").html("今天有雾霾 出门记得戴口罩~");
+									$(".now-span").css("background","red");
+									$("#box").css("background-image","url(yu.png)");
+								}
+								else if(t==8){
+									$(".now-span").html("差");
+									$(".now-pan").html("今天有雾 注意行车安全~");
+									$(".now-span").css("background","red");
+									$("#box").css("background-image","url(yu.png)");
+								}
+								else{}
+								$(".now-uptime").html("更新于 "+hour+":"+fen+"");
+								
+								var hwendu = [];
+								for(var i=0; i<5 ; i++) {
+									length = a[i].high.length;
+									hwendu.push(a[i].high.substring(2,length-1));
+								}
+								var lwendu = [];
+								for(var i=0; i<5 ; i++) {
+									length = a[i].low.length;
+									lwendu.push(a[i].low.substring(2,length-1));
+								}
+								var days = [];
+								for(var i=0; i<5 ; i++) {	
+									days.push(a[i].date);
+								}
+								console.log(days);
+								//初始化ehcharts实例
+								var myChart=echarts.init(document.getElementById("box2"));
+								//指定图表的配置项和数据
+								var option={
+									
+									//标题
+									title:{
+									text:'气温趋势'
+									},
+									//工具箱
+									//保存图片
+									toolbox:{
+										show:true,
+										feature:{
+											magicType: {type: ['line', 'bar']},
+											restore: {},
+											saveAsImage:{
+												show:true
+											}
+										}
+									},
+									tooltip: {
+										trigger: 'axis'
+									},
+									//图例-每一条数据的名字叫销量
+									legend:{
+										data:['高温','低温']
+									},
+									//x轴
+									xAxis:{
+										data:days
+									},
+									//y轴没有显式设置，根据值自动生成y轴
+									yAxis:{},
+									
+									//数据-data是最终要显示的数据
+									series:[{
+										name:'高温',
+										type:'line',
+										data:hwendu,
+										smooth:0.2,
+										lineStyle: {
+											width: 5
+										}
+									},
+									{
+										name:'低温',
+										type:'line',
+										data:lwendu,
+										smooth:0.2,
+										lineStyle: {
+											width: 5
+										}
+									}]
+								};
+								//使用刚刚指定的配置项和数据项显示图表
+								myChart.setOption(option);
+							}
+							
+						});
+					}
+				});
+			}
+
+			function y2(city) {
+				
+				$.ajax({
+					url: 'http://ip.ws.126.net/ipquery?ie=utf-8',
+					dataType: "script",
+					async: false,
+					success: function(data) {
+						if(city!=null){
+							var uu = city;
+							
+							if(uu.substring(uu.length-1)=="市")
+								uu = uu.substring(0, uu.length-1)
+								console.log(uu);
+						}else{
+							var uu = lc;
+							if(lc.substring(lc.length-1)=="市")
+								uu = lc.substring(0, lc.length-1)
+						}						
+						var url = encodeURI("https://v0.yiketianqi.com/api?version=v9&appid=28742769&appsecret=U5ihX20B&city=" + uu);
+						$.get({
+							url: url,
+							dataType: "json",
+							async: false,
+							success: function(data) {
+								console.log(data)
+								var a = new Array(5);
+								for (var i = 0; i < 5; i++) {
+									a[i] = data.data[i];
+								}
+								var date = a[0].date + a[0].day.substring(a[0].day.length-5);
+								var weather = a[0].wea;
+								var humidity = a[0].humidity;
+								var sunrise = a[0].sunrise;
+								var sunset = a[0].sunset;
+								var hwendu = a[0].tem1;
+								var lwendu = a[0].tem2;
+								var pressure = a[0].pressure;
+								var wind = a[0].win[0];
+								var windspeed = a[0].win_speed;
+								var ziwaixian = a[0].index[0].level;
+								var alarm = a[0].alarm.alarm_content;
+								var air = a[0].air;
+								var airlevel = a[0].air_level;
+								var aqi = data.aqi;
+								var pm25 = data.aqi.pm25;
+								var pm25desc = data.aqi.pm25_desc;
+								var pm10 = data.aqi.pm10;
+								var pm10desc = data.aqi.pm10_desc;
+								var o3 = data.aqi.o3;
+								var o3desc = data.aqi.o3_desc;
+								var no2 = data.aqi.no2;
+								var no2desc = data.aqi.no2_desc;
+								$("#info-list").children("li:eq(0)").find("span").html(date);
+								$("#info-list").children("li:eq(1)").find("span").html(weather);
+								$("#info-list").children("li:eq(2)").find("span").html(hwendu + "℃");
+								$("#info-list").children("li:eq(3)").find("span").html(lwendu + "℃");
+								$("#info-list").children("li:eq(4)").find("span").html(humidity);
+								$("#info-list").children("li:eq(5)").find("span").html(pressure);
+								$("#info-list").children("li:eq(6)").find("span").html(wind);
+								$("#info-list").children("li:eq(7)").find("span").html(windspeed);
+								$("#info-list").children("li:eq(8)").find("span").html(sunrise);
+								$("#info-list").children("li:eq(9)").find("span").html(sunset);
+								$("#info-list").children("li:eq(10)").find("span").html(ziwaixian);
+								$("#info-list").children("li:eq(11)").find("span").html(alarm);
+								$("#air-pollutant").children("div:eq(0)").children("p:eq(1)").children("span:eq(0)").html(pm25);
+								$("#air-pollutant").children("div:eq(0)").children("p:eq(1)").children("span:eq(1)").html(pm25desc);
+								$("#air-pollutant").children("div:eq(1)").children("p:eq(1)").children("span:eq(0)").html(pm10);
+								$("#air-pollutant").children("div:eq(1)").children("p:eq(1)").children("span:eq(1)").html(pm10desc);
+								$("#air-pollutant").children("div:eq(2)").children("p:eq(1)").children("span:eq(0)").html(o3);
+								$("#air-pollutant").children("div:eq(2)").children("p:eq(1)").children("span:eq(1)").html(o3desc);
+								$("#air-pollutant").children("div:eq(3)").children("p:eq(1)").children("span:eq(0)").html(no2);
+								$("#air-pollutant").children("div:eq(3)").children("p:eq(1)").children("span:eq(1)").html(no2desc);	
+								function pollColor(desc) {
+									if (desc == "优") {
+										return "#7CCD7C";
+									}
+									else if (desc == "良") {
+										return "green";
+									}
+									else if (desc == "轻度污染") {
+										return "#ff6900";
+									}
+									else if (desc == "中度污染") {
+										return "#ee001c";
+									}
+									else if (desc == "严重污染") {
+										return "#7c0549";
+									}
+									else if (desc == "重度污染") {
+										return "#B22222";
+									}
+									else return "rgb(209, 206, 206)";
+								}
+
+								$("#air-pollutant").children("div:eq(0)").children("p:eq(2)").find("span").css('background-color', pollColor(pm25desc));
+								$("#air-pollutant").children("div:eq(0)").children("p:eq(2)").find("span").css('width', (pm25/500)*100 + "px");
+								$("#air-pollutant").children("div:eq(0)").children("p:eq(1)").children("span:eq(1)").css('color', pollColor(pm25desc));
+								$("#air-pollutant").children("div:eq(1)").children("p:eq(2)").find("span").css('background-color', pollColor(pm10desc));
+								$("#air-pollutant").children("div:eq(1)").children("p:eq(2)").find("span").css('width', (pm10/500)*100 + "px");
+								$("#air-pollutant").children("div:eq(1)").children("p:eq(1)").children("span:eq(1)").css('color', pollColor(pm10desc));
+								$("#air-pollutant").children("div:eq(2)").children("p:eq(2)").find("span").css('background-color', pollColor(o3desc));
+								$("#air-pollutant").children("div:eq(2)").children("p:eq(2)").find("span").css('width', (o3/500)*100 + "px");
+								$("#air-pollutant").children("div:eq(2)").children("p:eq(1)").children("span:eq(1)").css('color', pollColor(o3desc));
+								$("#air-pollutant").children("div:eq(3)").children("p:eq(2)").find("span").css('background-color', pollColor(no2desc));
+								$("#air-pollutant").children("div:eq(3)").children("p:eq(2)").find("span").css('width', (no2/500)*100 + "px");
+								$("#air-pollutant").children("div:eq(3)").children("p:eq(1)").children("span:eq(1)").css('color', pollColor(no2desc));
+								var setcolor = [];
+								setcolor.push(1);
+								if (air <= 100) {
+									setcolor.push('#7CCD7C')
+								}
+								else if (air > 100 && air < 300) {
+									setcolor.push('#FFD700')
+								} 
+								else {
+									setcolor.push('#FF4500')
+								}
+								var myChart=echarts.init(document.getElementById("air-quality"));
+								//指定图表的配置项和数据
+								option = {
+									tooltip: {
+										formatter: '{a} <br/>{b} : {c}%'
+									},
+									toolbox: {
+										feature: {
+											saveAsImage: {}
+										}
+									},
+									series: [
+										{
+											name: '空气质量',
+											type: 'gauge',
+											title: {
+												offsetCenter: [0, '-70'],
+												fontSize: 13
+											},
+											detail: {
+												formatter: '{value}' + '\n{unit|' + airlevel + '}',
+												rich: {
+													unit: {
+														fontSize: 20,
+														color : setcolor[1]
+													}
+												},
+												offsetCenter: [0, '-15'],
+												textStyle: {
+													color: setcolor[1],
+													fontSize: 50
+												}
+											},
+											data: [{value: air, name: '空气质量'}],
+											startAngle: 180,
+                							endAngle: 0,
+											max: 500,
+											axisTick: {
+												splitNumber: 1,
+												
+											},
+											axisLine: {
+												lineStyle: {
+													color: [[1, '#c4c4c4']]
+												},
+											},
+											splitLine: { 
+												show: false,
+												lineStyle: {
+													color: "auto"
+												},
+											},
+
+											pointer: false
+										},
+										{
+											name: '空气质量',
+											type: 'gauge',
+											startAngle: 180,
+                							endAngle: 180-180*(air/500),
+											max: 500,
+											axisTick: {
+												splitNumber: 0,
+												
+											},
+											axisLine: {
+												lineStyle: {
+													
+													color: [setcolor],
+													radius: 10
+												},
+											},
+											splitLine: { 
+												show: false,
+											},
+											pointer: false
+										}
+									]
+								};
+								//使用刚刚指定的配置项和数据项显示图表
+								myChart.setOption(option);
+
+								var hours = new Array(a[0].hours.length);
+								var wendu = new Array(a[0].hours.length);
+								var wea = new Array(a[0].hours.length)
+								for (var i = 0; i < a[0].hours.length; i++) {
+									hours[i] = a[0].hours[i].hours;
+									wendu[i] = a[0].hours[i].tem;
+									wea[i] = a[0].hours[i].wea;
+								}
+								for (var i = 0; i < a[0].hours.length; i++) {
+									if (wea[i] == "阴") wea[i] = "yins"
+									else if (wea[i] == "晴") wea[i] = "qing";
+									else if (wea[i] == "小雨") wea[i] = "xiaoyu";
+									else if (wea[i] == "雷雨") wea[i] = "leiyu";
+									else if (wea[i] == "中雨") wea[i] = "zhongyu";
+									else if (wea[i] == "小雪") wea[i] = "xiaoxue";
+									else if (wea[i] == "中雪") wea[i] = "zhongxue";
+									else if (wea[i] == "阵雨") wea[i] = "zhenyu";
+									else if (wea[i] == "雾") wea[i] = "wu";
+									else if (wea[i] == "多云") wea[i] = "duoyun";
+									else if (wea[i] == "大雨") wea[i] = "dayu";
+									else if (wea[i] == "大雪") wea[i] = "daxue";
+									else if (wea[i] == "阵雪") wea[i] = "zhenxue";
+								}
+								var myChart=echarts.init(document.getElementById("hours-data"));
+								//指定图表的配置项和数据
+								var option={
+									
+									//标题
+									title:{
+									text:'逐时天气'
+									},
+									//工具箱
+									//保存图片
+									toolbox:{
+										show:true,
+										feature:{
+											saveAsImage:{
+												show:true
+											}
+										}
+									},
+									
+									//图例-每一条数据的名字
+									legend:{
+										show: false
+									},
+									dataZoom: [
+										{
+											show: true,
+											realtime: true,
+											start: 0,
+											end: 20,
+											xAxisIndex: [0, 1]
+										}
+										
+									],
+									//x轴
+									xAxis:[{
+										position: 'top',
+										data: hours,
+										axisLine: {
+											show: false
+										},
+										axisTick:{       
+											show:false
+										},	
+									},
+									{
+										data: wea,
+										axisLine: {
+											show: false
+										},
+										axisTick:{       
+											show:false
+										},
+										offset: -180,
+										axisLabel: {
+											// formatter: '{' + value + '| }',
+											formatter: function (value) {
+												return '{' + value + '| }';
+											},
+											rich: {
+												
+												yins: {
+													height: '30',
+													backgroundColor: {
+														image: './yins.png'
+													}
+												},
+												qing: {
+													height: '30',
+													backgroundColor: {
+														image: './qing.png'
+													}
+												},
+												duoyun: {
+													height: '30',
+													backgroundColor: {
+														image: './duoyun.png'
+													}
+												},
+												xiaoyu: {
+													height: '30',
+													backgroundColor: {
+														image: './xiaoyu.png'
+													}
+												},
+												zhongyu: {
+													height: '30',
+													backgroundColor: {
+														image: './zhongyu.png'
+													}
+												},
+												zhenyu: {
+													height: '30',
+													backgroundColor: {
+														image: './zhenyu.png'
+													}
+												},
+												dayu: {
+													height: '30',
+													backgroundColor: {
+														image: './dayu.png'
+													}
+												},
+												xiaoxue: {
+													height: '30',
+													backgroundColor: {
+														image: './xiaoxue.png'
+													}
+												},
+												zhongxue: {
+													height: '30',
+													backgroundColor: {
+														image: './zhongxue.png'
+													}
+												},
+												daxue: {
+													height: '30',
+													backgroundColor: {
+														image: './daxue.png'
+													}
+												},
+												wu: {
+													height: '30',
+													backgroundColor: {
+														image: './wu.png'
+													}
+												},
+												leiyu: {
+													height: '30',
+													backgroundColor: {
+														image: './leiyu.png'
+													}
+												},
+												zhenxue: {
+													height: '30',
+													backgroundColor: {
+														image: './zhenxue.png'
+													}
+												}
+											}
+										}
+									}],
+								
+									//y轴没有显式设置，根据值自动生成y轴
+									yAxis:{
+										show:false,
+										max: 40
+									},
+									//数据-data是最终要显示的数据
+									series:[{
+										name:'温度',
+										type:'line',
+										
+										label: {
+											normal: {
+												show: true,
+												position: 'top',
+												formatter: '{c}℃'
+											}
+											
+										},	
+										data: wendu,
+										smooth:0.2,
+										lineStyle: {
+											width: 5
+										}
+									}]
+								};
+								//使用刚刚指定的配置项和数据项显示图表
+								myChart.setOption(option);
+							}
+						});
+					}
+				});
+			};
+			//判断天气算法
+			function gong(a, b, c) {
+				if (a === "晴") {
+					b.html('晴');
+					c.attr("src", "qing.png");
+					return 1;
+				} else if (a === "多云") {
+					b.html('多云');
+					c.attr("src", "duoyun.png");
+					return 2;
+				} else if (a === "阴") {
+					b.html('阴');
+					c.attr("src", "yins.png");
+					return 3;
+				} else if (a === "小雨") {
+					b.html('小雨');
+					c.attr("src", "xiaoyu.png");
+					return 4;
+				} else if (a === "中雨") {
+					b.html('中雨');
+					c.attr("src", "zhongyu.png");
+					return 4;
+				} else if (a === "大雨") {
+					b.html('大雨');
+					c.attr("src", "dayu.png");
+					return 4;
+				} else if (a === "阵雨") {
+					b.html('阵雨');
+					c.attr("src", "zhenyu.png");
+					return 4;
+				} else if (a === "小雪") {
+					b.html('小雪');
+					c.attr("src", "xiaoxue.png");
+					return 5;
+				} else if (a === "中雪") {
+					b.html('中雪');
+					c.attr("src", "zhongxue.png");
+					return 5;
+				} else if (a === "大雪") {
+					b.html('大雪');
+					c.attr("src", "daxue.png");
+					return 5;
+				} else if (a === "阵雪") {
+					b.html('阵雪');
+					c.attr("src", "zhenxue.png");
+					return 5;
+				} else if (a.indexOf("雷") >= 0) {
+					b.html('雷雨');
+					c.attr("src", "leiyu.png");
+					return 6;
+				} else if (a.indexOf("霾") >= 0) {
+					b.html('霾');
+					c.attr("src", "mai.png");
+					return 7;
+				} else if (a.indexOf("雾") >= 0) {
+					b.html('雾');
+					c.attr("src", "wu.png");
+					return 8;
+				}
+			}
+		</script>
+		
+	</body>
+</html>
