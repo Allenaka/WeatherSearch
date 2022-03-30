@@ -418,6 +418,10 @@
 							async: false,
 							success: function(data) {
 								console.log(data)
+								if (data.errcode) {
+								    alert(data.errmsg)
+									return false;
+								}
 								var a = new Array(5);
 								for (var i = 0; i < 5; i++) {
 									a[i] = data.data[i];
